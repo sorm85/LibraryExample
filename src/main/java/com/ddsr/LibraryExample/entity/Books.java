@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "Books")
-public class Books {
+public class Books implements IBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,11 +22,14 @@ public class Books {
     @Column
     private int publishingYear;
 
-    public Books(int id, String title, String author, int publishingYear) {
-        this.id = id;
+    public Books( String title, String author, int publishingYear) {
         this.title = title;
         this.author = author;
         this.publishingYear = publishingYear;
+    }
+
+    public Books(){
+
     }
 
     public int getId() {

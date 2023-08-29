@@ -5,8 +5,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "UsersLibrary")
+public class UsersLibrary {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -19,11 +19,15 @@ public class User {
     @Column
     private String lastName;
 
-    public User(int id, String firstName, String lastName, int birthYear) {
+    public UsersLibrary(String firstName, String lastName, int birthYear) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
+    }
+
+    public UsersLibrary() {
+
     }
 
     @Column
@@ -65,8 +69,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && birthYear == user.birthYear && firstName.equals(user.firstName) && lastName.equals(user.lastName);
+        UsersLibrary usersLibrary = (UsersLibrary) o;
+        return id == usersLibrary.id && birthYear == usersLibrary.birthYear && firstName.equals(usersLibrary.firstName) && lastName.equals(usersLibrary.lastName);
     }
 
     @Override

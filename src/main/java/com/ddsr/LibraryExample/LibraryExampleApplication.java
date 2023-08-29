@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LibraryExampleApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(LibraryExampleApplication.class, args);
+		new StartLibrary();
 	}
 
 }
